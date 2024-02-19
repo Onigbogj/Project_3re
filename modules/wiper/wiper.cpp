@@ -68,28 +68,31 @@ void wiperUpdate() {
     switch (wiperState) {
     case HI_MODE:
         stateNumber = 0;
-        cycle(0.09, 0.125, 0.02, 250);
+        cycle(0.015, 0.148, 0.02, 279);
     
         break;
     
     case LO_MODE:
         
         stateNumber = 1;
-        cycle(0.09, 0.125, 0.02, 2000);
+        cycle(0.015, 0.115, 0.02, 370);
         break;
 
     case INT_MODE:
 
         stateNumber = 2;
-        cycle(0.09, 0.125, 0.02, selected_delaytime);
+        cycle(0.015, 0.115, 0.02, 370);
+        delay(selected_delaytime);
+
         break;
     case OFF_MODE:
 
         stateNumber = 3;
+
         break;
     default:
-        wiperState = OFF_MODE;
         stateNumber = 3;
+
         break;
 
     }
